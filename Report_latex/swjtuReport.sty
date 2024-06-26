@@ -86,10 +86,16 @@
 
 % 参考文献设置
 \RequirePackage{natbib}
-\newcommand{\reference}{
-    \bibliographystyle{unsrt}    % 规定了参考文献的格式，建议使用plain,plainnat,abbrvnat内置格式，也可以自制样式.bst文件来导入使用
-    \bibliography{references}    % 调出LaTeX生成参考文献列表
-    %\setcitestyle{open={(},close={)}}
+% \newcommand{\reference}{
+%     \bibliographystyle{unsrt}    % 规定了参考文献的格式，建议使用plain,plainnat,abbrvnat内置格式，也可以自制样式.bst文件来导入使用
+%     \bibliography{references}    % 调出LaTeX生成参考文献列表
+%     %\setcitestyle{open={(},close={)}}
+% }
+% 自定义参考文献命令，确保显示所有文献
+\newcommand{\reference}{%
+    \nocite{*} % 强制包含bib文件中的所有文献
+    \bibliographystyle{unsrt} % 保持原有风格，如果您有特殊需求，可以更改此行
+    \bibliography{references} % 调用参考文献数据库
 }
 
 % 文本框设置
@@ -126,24 +132,30 @@
     %标题
     \title{ 
     \vspace{2cm} 
-    \heiti \huge \textbf{{机械课程设计报告}} \par
-    \vspace{1cm} 
+    \heiti \huge \textbf{{}} \par
+    % \vspace{1cm} 
     \heiti \Large {\underline{}}
-    \vspace{3cm} 
+    % \vspace{1cm} 
         }
     %信息
     \author{
     \vspace{0.5cm}
-    \kaishu\Large 学院\ \dlmu[9cm]{机电工程学院} \qquad \\ %学院
+    \kaishu\Large 课程名称\ \dlmu[9cm]{精密机械与仪器设计课程设计} \qquad \\ %课程名称
     \vspace{0.5cm}
-    \kaishu\Large 专业\ \dlmu[9cm]{测控技术与仪器} \qquad  \\ %专业
+    \kaishu\Large 学{\qquad}院\ \dlmu[9cm]{机电工程学院} \qquad \\ %学院
     \vspace{0.5cm}
-    \kaishu\Large 学号\ \dlmu[9cm]{3122000234}  \qquad  \\ %学号
+    \kaishu\Large 专业班级\ \dlmu[9cm]{测控技术与仪器1班} \qquad  \\ %专业
     \vspace{0.5cm}
-    \kaishu\Large 姓名\ \dlmu[9cm]{袁汉阔} \qquad  \\ %姓名
+    \kaishu\Large 学{\qquad}号\ \dlmu[9cm]{3122000234}  \qquad  \\ %学号
+    \vspace{0.5cm}
+    \kaishu\Large 姓{\qquad}名\ \dlmu[9cm]{袁汉阔} \qquad  \\ %姓名
+    \vspace{0.5cm}
+    \kaishu\Large 联系方式\ \dlmu[9cm]{17811426448} \qquad  \\ %联系方式
+    \vspace{0.5cm}
+    \kaishu\Large 任课教师\ \dlmu[9cm]{姬靖} \qquad  \\ %任课教师
+    \vspace{0.5cm}
         }
     %日期    
-    
     \date{\today} 
 }
 
